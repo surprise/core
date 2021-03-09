@@ -182,7 +182,10 @@ module.exports = ({
     },
     op_duels: {
       rookie_title_prestige: op_rookie_title_prestige,
-      ...pickGamemode(rest, 'op_duel_'),
+      ...pickGamemode(rest, 'op_duel_')
+    },
+    op_doubles: {
+      ...pickGamemode(rest, 'op_doubles_')
     },
     ranked_duels: {
       win_streak: ranked_1_win_streak,
