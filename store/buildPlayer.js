@@ -14,7 +14,7 @@ const { getPlayerProfile, cachePlayerProfile } = require('./queries');
 /*
 Functions to build/cache player object
  */
-async function buildPlayer(uuid, { shouldCache = true } = {}) {
+async function buildPlayer(uuid, { shouldCache = false } = {}) {
   return cachedFunction(`player:${uuid}`, async () => {
     const body = await getData(redis, generateJob('player', { id: uuid }).url);
     const playerData = processPlayerData(body.player || {});
